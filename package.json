@@ -4,7 +4,7 @@
   "description": "# User Story",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jest": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cienna97/Employee-Manager/issues"
   },
-  "homepage": "https://github.com/Cienna97/Employee-Manager#readme"
+  "homepage": "https://github.com/Cienna97/Employee-Manager#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
 }
