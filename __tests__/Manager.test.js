@@ -1,5 +1,6 @@
 //name 
-
+const Manager = require("../lib/Manager");
+const Employee = require("../lib/E")
 //id
 
 //email
