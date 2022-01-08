@@ -1,8 +1,8 @@
 //name 
 const Manager = require("../lib/manager");
 const Employee = require("../lib/employee");
-const { TestWatcher } = require("jest");
-const manager = require("../lib/manager");
+//const { TestWatcher } = require("jest");
+//const manager = require("../lib/manager");
 //id
 test("getRole() should return \"Manager\"", () => {
     const testValue = "Manager";
