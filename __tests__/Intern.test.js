@@ -1,11 +1,11 @@
 //name 
+const intern = require("../lib/intern");
 
-//id
-
-//email
-
-//getName()
-
+test("Can set school via constructor", () => {
+  const testValue = "UO";
+  const e = new intern("Foo", 1, "test@test.com", testValue);
+  expect(e.school).toBe(testValue);
+});
 //getId()
 
 //getEmail()
