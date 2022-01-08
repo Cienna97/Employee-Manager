@@ -30,12 +30,12 @@ test("Can set email via constructor argument", () => {
 test("Can get email via getEmail()", () => {
     const testValue = "test@test.com";
     const e = new employee("Foo", 1, testValue);
-    expect(e.getRole()).toBe(testValue);
+    expect(e.getEmail()).toBe(testValue);
 });
 //getId()
 test("Can get id via getId()", () => {
     const testValue = 100;
-    const e = new employee("100", testValue);
+    const e = new employee("Foo", testValue);
     expect(e.getId()).toBe(testValue);
 });
 
