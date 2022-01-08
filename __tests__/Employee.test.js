@@ -31,3 +31,8 @@ test("Can set email via constructor argument", () => {
 //getEmail()
 
 //getRole() Returns 'Employee'
+test("getRole() should return \"employee\"", () => {
+    const testValue = "employee";
+    const e = new employee("Cienna", 1, "test@test.com");
+    expect(e.getRole()).toBe(testValue);
+});
