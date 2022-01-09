@@ -105,4 +105,23 @@ function createTeam() {
     });
   }
 
+  function addEngineer() {
+      inquirer.prompt([
+          {
+              type: "input",
+              name: "engineerName",
+              message: "What is the engineer's name?",
+              validate: answer => {
+                  if(answer !== "") {
+                      return true;
+                  }
+                  return "Enter at least one character";
+              }
+          },
+          {
+              
+          }
+      ])
+  }
+
 
