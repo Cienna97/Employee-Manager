@@ -260,8 +260,17 @@ function createTeam() {
                   createTeam();
               });
           }
-        
-      ])
+          //function to build team with team member input
+        function buildTeam() {
+            if(!fs.existsSync(OUTPUT_DIR)) {
+                fs.mkdirSync(OUTPUT_DIR)
+            }
+            fs,fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+        }
+      
+
+      createManager();
   }
 
+    appMenu();
 
