@@ -191,8 +191,60 @@ function createTeam() {
                           return "Enter at least one character";
                       }
                   }, 
+                  //input for the intern's id
                   {
-                      
+                     type: "input",
+                     name: "internId",
+                     message: "What is the intern's id?",
+                     validate: answer => {
+                       const pass = answer.match(
+                         /^[1-9]\d*$/
+                       );
+                       if (pass) {
+                         if (idArray.includes(answer)) {
+                           return "This ID is already taken. Please enter a different number.";
+                         } else {
+                           return true;
+                         }
+             
+                       }
+                       return "Enter a positive number greater than zero";
+                     }
+                    },
+                    {
+                        type: "input",
+        name: "internEmail",
+        message: "What is your intern's email?",
+        validate: answer => {
+          const pass = answer.match(
+            /\S+@\S+\.\S+/
+          );
+          if (pass) {
+            return true;
+          }
+          return "Please enter a valid email address.";
+        }
+      },
+      //input entry for intern's email
+      {
+        type: "input",
+        name: "internEmail",
+        message: "What is the intern's email?",
+        validate: answer => {
+          const pass = answer.match(
+            /\S+@\S+\.\S+/
+          );
+          if (pass) {
+            return true;
+          }
+          return "Enter a valid email address";
+        }
+    },
+      {
+       
+
+                     },
+             
                   }
               ])
           }
