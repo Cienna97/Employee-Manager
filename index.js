@@ -1,6 +1,6 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Manager = require("./lib/manager");
+const engineer = require("./lib/Engineer");
+const intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -68,3 +68,41 @@ function appMenu() {
           if (pass) {
             return true;
           }
+          return "Enter a positive number greater than zero";
+        }
+    }
+  ]).then(answers => {
+    const manager = new Manager (answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+    teamMembers.push(manager);
+    idArray.push(answers.managerId);
+    createTeam();
+  });
+}
+function createTeam() {
+
+    inquirer.prompt([
+      {
+        type: "list",
+        name: "memberChoice",
+        message: "Which type of team member would you like to add?",
+        choices: [
+          "Engineer",
+          "Intern",
+          "I don't want to add any more team members"
+        ]
+      }
+    ]).then(userChoice => {
+      switch (userChoice.memberChoice) {
+        case "Engineer":
+          addEngineer();
+          break;
+        case "Intern":
+          addIntern();
+          break;
+        default:
+          buildTeam();
+      }
+    });
+  }
+
+
