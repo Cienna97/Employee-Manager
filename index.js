@@ -14,7 +14,7 @@ const teamMembers = [];
 const idArray = [];
 
 function appMenu() {
-
+//manager name input
     function createManager() {
       console.log("Please build your team");
       inquirer.prompt([
@@ -29,6 +29,7 @@ function appMenu() {
             return "Enter a character";
           }
         },
+        //input for manager id
         {
           type: "input",
           name: "managerId",
@@ -43,7 +44,9 @@ function appMenu() {
             return "Enter a number greater than zero";
           }
         },
+        //input for manager email
         {
+        
             type: "input",
         name: "managerEmail",
         message: "What is the manager's email?",
@@ -57,6 +60,7 @@ function appMenu() {
           return "Enter a valid email address";
         }
       },
+      //input for manager's offfice number
       {
         type: "input",
         name: "managerOfficeNumber",
@@ -78,17 +82,18 @@ function appMenu() {
     createTeam();
   });
 }
+// input for which member is being added i.e. interen, engineer, none
 function createTeam() {
 
     inquirer.prompt([
       {
         type: "list",
         name: "memberChoice",
-        message: "Which type of team member would you like to add?",
+        message: "Which type of member do you want to add?",
         choices: [
           "Engineer",
           "Intern",
-          "I don't want to add any more team members"
+          "No more members"
         ]
       }
     ]).then(userChoice => {
@@ -104,7 +109,7 @@ function createTeam() {
       }
     });
   }
-
+// input for input engineer name
   function addEngineer() {
       inquirer.prompt([
           {
@@ -118,9 +123,27 @@ function createTeam() {
                   return "Enter at least one character";
               }
           },
+          //input for engineer's id
           {
-              
-          }
+              type: "input",
+              name: "engineerId",
+              message: "What is your engineer's id?",
+              validate: answer => {
+                  const pass = answer.match(
+                      /^[1-9]\d*$/
+                  );
+                  if (pass) {
+                  if (idArray.includes(answer)) {
+                      return "Id is already used, Please enter another one";
+                  } else {
+                      return true;
+                  }
+              }
+              return "Enter a positive number that is greater than zero";
+            }
+          },
+          
+   
       ])
   }
 
