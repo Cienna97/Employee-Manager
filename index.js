@@ -240,15 +240,27 @@ function createTeam() {
           return "Enter a valid email address";
         }
     },
+    //array for intern school input
       {
-       
-
-                     },
-             
-                  }
-              ])
+        type: "input",
+        name: "internSchool",
+        message: "What is your intern's school?",
+        validate: answer => {
+          if (answer !== "") {
+            return true;
           }
-   
+          return "Please enter at least one character.";
+        }
+    }
+             //creating team member
+              ]).then(answers => {
+                  const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+                  teamMembers.push(intern);
+                  idArray.push(answers.internId);
+                  createTeam();
+              });
+          }
+        
       ])
   }
 
