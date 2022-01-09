@@ -142,7 +142,43 @@ function createTeam() {
               return "Enter a positive number that is greater than zero";
             }
           },
-          
+          //array for engineer id input
+          {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the engineer's email?",
+            validate: answer => {
+              const pass = answer.match(
+                /\S+@\S+\.\S+/
+              );
+              if (pass) {
+                return true;
+              }
+              return "Enter a valid email address";
+            }
+          },
+          //array for engineer github input
+          {
+            type: "input",
+            type: "input",
+        name: "engineerGithub",
+        message: "What is your engineer's GitHub username?",
+        validate: answer => {
+          if (answer !== "") {
+            return true;
+          }
+          return "Please enter at least one character.";
+        }
+      }
+    ]).then(answers => {
+      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+      teamMembers.push(engineer);
+      idArray.push(answers.engineerId);
+      createTeam();
+    });
+
+          }
+    
    
       ])
   }
