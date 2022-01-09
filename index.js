@@ -44,4 +44,27 @@ function appMenu() {
           }
         },
         {
-  
+            type: "input",
+        name: "managerEmail",
+        message: "What is the manager's email?",
+        validate: answer => {
+          const pass = answer.match(
+            /\S+@\S+\.\S+/
+          );
+          if (pass) {
+            return true;
+          }
+          return "Enter a valid email address";
+        }
+      },
+      {
+        type: "input",
+        name: "managerOfficeNumber",
+        message: "What is the manager's office number?",
+        validate: answer => {
+          const pass = answer.match(
+            /^[1-9]\d*$/
+          );
+          if (pass) {
+            return true;
+          }
