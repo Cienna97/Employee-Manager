@@ -30,11 +30,14 @@ THEN I exit the application, and the HTML is generated
 
 This application will allow employers to easily access their team's basic info such as emails and GitHub profiles
 
+Application uses jest and inquirer
+
 # Links
 
-Github:
+Github: https://github.com/Cienna97/Employee-Manager.git
 
-Live Application:
+
+Walkthrough Video: https://watch.screencastify.com/v/3VBgO87ojeeoDpE5ibXM
 
 # Screenshot 
 
@@ -42,3 +45,4 @@ In screenshot folder within application
 
 # Future Development 
 
+This application is set up right now and passes the tests required, however the front end of this application is still in progress.
