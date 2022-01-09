@@ -1,6 +1,6 @@
 const Manager = require("./lib/manager");
-const engineer = require("./lib/Engineer");
-const intern = require("./lib/Intern");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -176,9 +176,26 @@ function createTeam() {
       idArray.push(answers.engineerId);
       createTeam();
     });
-
           }
-    
+          //name of intern input
+          function addIntern() {
+              inquirer.prompt([
+                  {
+                      type: "input",
+                      name: "internName",
+                      message: "What is the intern's name?",
+                      validate: answer => {
+                          if (answer !=="") {
+                              return true;
+                          }
+                          return "Enter at least one character";
+                      }
+                  }, 
+                  {
+                      
+                  }
+              ])
+          }
    
       ])
   }
